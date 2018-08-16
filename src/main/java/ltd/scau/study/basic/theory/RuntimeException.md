@@ -1,4 +1,4 @@
-#RuntimeException
+# RuntimeException
 
 * Unchecked Exception
 * 不要求catch

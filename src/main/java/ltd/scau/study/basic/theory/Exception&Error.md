@@ -1,15 +1,15 @@
-#Exception, RuntimeException, Error
+# Exception, RuntimeException, Error
 
-###Exception
+### Exception
 * extends Throwable
 * Checked Exception
 
-###RuntimeException
+### RuntimeException
 * extends Exception
 * Unchecked Exception
 * 不要求catch
 
-###ERROR
+### ERROR
 * extends Throwable
 * 一般底层不可恢复
 
