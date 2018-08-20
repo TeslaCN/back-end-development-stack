@@ -1,5 +1,8 @@
 package ltd.scau.study.basic.practice;
 
+import java.io.IOException;
+import java.io.ObjectInputStream;
+import java.io.ObjectOutputStream;
 import java.io.Serializable;
 import java.util.Objects;
 
@@ -15,6 +18,14 @@ public class Person implements Serializable {
     private String name;
 
     private Integer age;
+
+    private void writeObject(ObjectOutputStream os) throws IOException {
+        System.out.println("writeObject()");
+    }
+
+    private void readObject(ObjectInputStream is) throws IOException {
+        System.out.println("readObject()");
+    }
 
     @Override
     public boolean equals(Object o) {
