@@ -64,13 +64,13 @@ HashSet 和 HashMap 区别
 
 HashMap 和 ConcurrentHashMap 的区别
 
-HashMap 的工作原理及代码实现，什么时候用到红黑树
+[HashMap 的工作原理及代码实现，什么时候用到红黑树](theory/HashMap.md)
 
 [多线程情况下HashMap死循环的问题](theory/多线程HashMap问题.md)
 
 [HashMap出现Hash DOS攻击的问题](practice/HashCollision.java)
 
-ConcurrentHashMap 的工作原理及代码实现，如何统计所有的元素个数
+[ConcurrentHashMap 的工作原理及代码实现，如何统计所有的元素个数](theory/ConcurrentHashMap.md)
 
 [手写简单的HashMap](practice/MyHashMap.java)
 
@@ -87,7 +87,7 @@ ConcurrentHashMap 的工作原理及代码实现，如何统计所有的元素�
 
 说说 CountDownLatch、CyclicBarrier 原理和区别
 
-说说 Semaphore 原理
+[说说 Semaphore 原理](theory/aqs.md)
 
 说说 Exchanger 原理
 
@@ -107,37 +107,41 @@ ConcurrentHashMap 的工作原理及代码实现，如何统计所有的元素�
 * 多线程的运行结果和中间变量与预期相符，与单线程运行产生的结果相同
 
 重入锁的概念，重入锁为什么可以防止死锁
-
+* 当前线程获取锁后，可以再次获取锁
 
 [产生死锁的四个条件（互斥、请求与保持、不剥夺、循环等待）](../concurrent/DeadLock.java)
 
 [如何检查死锁（通过jConsole检查死锁）](theory/jconsole.md)
 
-volatile 实现原理（禁止指令重排、刷新内存）
+[volatile 实现原理（禁止指令重排、刷新内存）](theory/volatile.md)
 
-synchronized 实现原理（对象监视器）
+[synchronized 实现原理（对象监视器）](theory/monitor.md)
 
-synchronized 与 lock 的区别
+[synchronized 与 lock 的区别](theory/synchronize&lock.md)
 
-AQS同步队列
+[LockSupport](theory/LockSupport.md)
 
-CAS无锁的概念、乐观锁和悲观锁
+[AQS同步队列](theory/aqs.md)
 
-常见的原子操作类
+[CAS无锁的概念、乐观锁和悲观锁](theory/cas&lock.md)
+
+[常见的原子操作类](theory/atomic.md)
 
 什么是ABA问题，出现ABA问题JDK是如何解决的
+* java.util.concurrent.AtomicMarkableReference
+* java.util.concurrent.AtomicStampedReference
 
 乐观锁的业务场景及实现方式
 
 Java 8并法包下常见的并发类
 
-偏向锁、轻量级锁、重量级锁、自旋锁的概念
+[偏向锁、轻量级锁、重量级锁、自旋锁的概念](theory/jdk_lock.md)
 
 可参考：《Java多线程编程核心技术》
 
 ### 1.5、JVM
 
-JVM运行时内存区域划分
+[JVM运行时内存区域划分](theory/JavaMemoryModel.md)
 
 内存溢出OOM和堆栈溢出SOE的示例及原因、如何排查与解决
 
@@ -155,7 +159,7 @@ JVM性能调优
 
 类加载的过程：加载、验证、准备、解析、初始化
 
-强引用、软引用、弱引用、虚引用
+[强引用、软引用、弱引用、虚引用](theory/Reference.md)
 
 Java内存模型JMM
 
@@ -694,7 +698,8 @@ Linux下排查某个死循环的线程；
 
 文件是怎么在磁盘上存储的？
 
-有了进程为何还要线程呢，不同进程和线程他们之间有什么不同。（进程是资源管理的最小单位，线程是程序执行的最小单位。在操作系统设计上，从进程演化出线程，最主要的目的就是更好的支持SMP以及减小（进程/线程）上下文切换开销。）
+有了进程为何还要线程呢，不同进程和线程他们之间有什么不同。
+（进程是资源管理的最小单位，线程是程序执行的最小单位。在操作系统设计上，从进程演化出线程，最主要的目的就是更好的支持SMP以及减小（进程/线程）上下文切换开销。）
 
 InnoDB聚集索引B+树叶子节点和磁盘什么顺序相同;
 
@@ -704,7 +709,10 @@ InnoDB聚集索引B+树叶子节点和磁盘什么顺序相同;
 
 HTTP1.0和HTTP1.1的区别；
 
-DHCP如何实现分配IP的； 发现阶段（DHCP客户端在网络中广播发送DHCP DISCOVER请求报文，发现DHCP服务器，请求IP地址租约）、提供阶段（DHCP服务器通过DHCP OFFER报文向DHCP客户端提供IP地址预分配）、选择阶段（DHCP客户端通过DHCP REQUEST报文确认选择第一个DHCP服务器为它提供IP地址自动分配服务）和确认阶段（被选择的DHCP服务器通过DHCP ACK报文把在DHCP OFFER报文中准备的IP地址租约给对应DHCP客户端）。
+DHCP如何实现分配IP的； 
+发现阶段（DHCP客户端在网络中广播发送DHCP DISCOVER请求报文，发现DHCP服务器，请求IP地址租约）
+提供阶段（DHCP服务器通过DHCP OFFER报文向DHCP客户端提供IP地址预分配）、选择阶段（DHCP客户端通过DHCP REQUEST报文确认选择第一个DHCP服务器为它提供IP地址自动分配服务）
+确认阶段（被选择的DHCP服务器通过DHCP ACK报文把在DHCP OFFER报文中准备的IP地址租约给对应DHCP客户端）
 
 OSI七层模型，每层都说下自己的理解和知道的，说的越多越好；
 
