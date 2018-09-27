@@ -1,4 +1,6 @@
-# JVM运行时内存区域划分
+# JMM Java内存模型
+
+### JVM运行时内存区域划分
 
 * VM Stack (Java VM Stack)
   * Stack Frame
@@ -20,3 +22,10 @@
   
 * Program Counter Register
   * 指向执行指令
+
+
+线程私有：
+* 工作内存
+  * 存放共享变量副本
+
+* 程序计数器

@@ -45,4 +45,9 @@ class UsualRuntimeExceptionTest {
             l.remove(integer);
         }
     }
+
+    @Test
+    void loadClass() throws ClassNotFoundException {
+        Class.forName("com.mysql.jdbc.Driver");
+    }
 }
